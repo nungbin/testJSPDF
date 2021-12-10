@@ -88,10 +88,27 @@
     <button type="button" onclick="convertHTMLToPDF()"
     style="margin-left: 350px;padding: 7px; color: white; background-color: darkslategrey;">PDF olarak Kaydet</button>
 </body>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script> -->
+<!-- <script src="./html2pdf.bundle.min.js"></script> -->
 <script src="./jspdf.umd.min.js"></script>
 <script src="./html2canvas.js"></script>
 <script>
+    // html2pdf is NOT a good option. The PDF is an image capture which is not scalable.
+    // function convertHTMLToPDF() {
+    //     var element = document.querySelector('#html-template');
+    //     // Define optional configuration
+    //     var options = {
+    //         filename: 'my-file1.pdf'
+    //     };
+
+    //     // Create instance of html2pdf class
+    //     var exporter = new html2pdf(element, options);
+
+    //     // Download the PDF or...
+    //     exporter.getPdf(true).then((pdf) => {
+    //         console.log('pdf file downloaded');
+    //     });
+    // }
+
     function convertHTMLToPDF() {
       const { jsPDF } = window.jspdf;
 
@@ -105,9 +122,6 @@
           x: 10,
           y: 10
       });
-
-      //doc.output('dataurlnewwindow');
-  }
-
+    }
 </script>
 </html>
